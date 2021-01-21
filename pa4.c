@@ -16,17 +16,17 @@ Node delte(Node root, char *plate) {
     }
     else {
       root->right = delte(root->right, plate);  //this is recursing right subtree
-      return (root); //or here
+      return (root); // return root
     }
   }
 
   if(root->left == NULL) { //if nothing is in the left subtree
     Node temp = root->right; //then i will make a temp var and make root right equal to that
     free(root->plate); //free the data
-    free(root->first); //freezzzes
-    free(root->last); //more frees
-    free(root); //and more
-    return (temp); //return temp
+    free(root->first); //free the owners first name
+    free(root->last); // free the last name
+    free(root); //and free the root itself
+    return (temp); //return temp node
   }
 
   Node LST = root->left; //left subtree is LST
